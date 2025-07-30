@@ -1,0 +1,117 @@
+/* Root settings */
+body {
+  background-color: #f8f9fa;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  color: #212529;
+}
+
+/* Container spacing */
+.container {
+  padding-top: 2rem;
+  padding-bottom: 2rem;
+}
+
+/* Heading styles */
+h1, h2, h3 {
+  font-weight: 600;
+  color: #343a40;
+}
+
+/* Room card styles */
+.card {
+  border: 1px solid #dee2e6;
+  border-radius: 0.75rem;
+  transition: transform 0.2s ease-in-out;
+}
+
+.card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
+}
+
+.card .card-title {
+  font-size: 1.25rem;
+  font-weight: 500;
+}
+
+.card .card-text {
+  font-size: 0.95rem;
+}
+
+/* Availability badge */
+.badge {
+  font-size: 0.9rem;
+  padding: 0.4em 0.75em;
+}
+
+/* Book button */
+.btn-primary {
+  font-weight: 500;
+  border-radius: 0.5rem;
+}
+
+/* Responsive toast container */
+.toast-container {
+  max-width: 300px;
+}
+
+/* Toast styling */
+.toast {
+  border-radius: 0.5rem;
+  font-size: 0.95rem;
+}
+
+/* Modal overlay */
+.modal {
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+/* Modal content */
+.modal-content {
+  border-radius: 0.75rem;
+}
+
+/* Form fields */
+.form-control {
+  border-radius: 0.5rem;
+  font-size: 0.95rem;
+}
+
+.form-label {
+  font-weight: 500;
+  margin-bottom: 0.25rem;
+}
+
+.invalid-feedback {
+  font-size: 0.85rem;
+}
+
+/* Custom filter input spacing */
+.filter-row {
+  margin-bottom: 1rem;
+}
+
+/* Small screen layout fixes */
+@media (max-width: 576px) {
+  .card .card-body {
+    padding: 1rem;
+  }
+
+  .btn {
+    font-size: 0.9rem;
+  }
+
+  .toast-container {
+    width: 100%;
+    left: 0;
+    right: 0;
+    top: auto;
+    bottom: 1rem;
+    text-align: center;
+  }
+
+  .toast {
+    display: inline-block;
+    margin: 0 auto;
+  }
+}
