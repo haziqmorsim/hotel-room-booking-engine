@@ -1,0 +1,40 @@
+<input class="form-control mb-3" placeholder="Search room name..." [(ngModel)]="searchQuery" (input)="filterRooms()" />
+
+<div class="container mt-4">
+    <div class="mb-3">
+        <select class="form-select" [(ngModel)]="selectedType" (change)="filterByType()">
+            <option value="">All Types</option>
+            <option value="Single">Single</option>
+            <option value="Double">Double</option>
+            <option value="Suite">Suite</option>
+        </select>
+    </div>
+</div>
+
+<div class="container">
+  <div class="row">
+    <div class="col-12 col-md-6 col-lg-4" *ngFor="let room of filteredRooms">
+      <app-room-card [room]="room"></app-room-card>
+    </div>
+  </div>
+</div>
+
+<div
+  class="toast-container position-fixed top-0 end-0 p-3"
+  style="z-index: 1055;"
+  *ngIf="showToast"
+>
+  <div class="toast align-items-center text-white bg-success border-0 show">
+    <div class="d-flex">
+      <div class="toast-body">
+        {{ toastMessage }}
+      </div>
+      <button
+        type="button"
+        class="btn-close btn-close-white me-2 m-auto"
+        aria-label="Close"
+        (click)="showToast = false"
+      ></button>
+    </div>
+  </div>
+</div>

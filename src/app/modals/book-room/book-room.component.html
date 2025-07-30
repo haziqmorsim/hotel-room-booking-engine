@@ -1,0 +1,38 @@
+<div class="modal show d-block" tabindex="-1">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <form [formGroup]="bookingForm" (ngSubmit)="onSubmit()">
+        <div class="modal-header">
+          <h5 class="modal-title">Book Room {{ room.name }}</h5>
+        </div>
+        <div class="modal-body">
+          <div class="mb-3">
+            <label>Guest Name</label>
+            <input formControlName="guestName" class="form-control" [class.is-invalid]="bookingForm.get('guestName')?.invalid && bookingForm.get('guestName')?.touched" />
+            <div class="invalid-feedback" *ngIf="bookingForm.get('guestName')?.invalid && bookingForm.get('guestName')?.touched">
+                Guest name is required.
+            </div>
+          </div>
+          <div class="mb-3">
+            <label>Check-in Date</label>
+            <input formControlName="checkIn" type="date" class="form-control" [class.is-invalid]="bookingForm.get('checkIn')?.invalid && bookingForm.get('checkIn')?.touched" />
+            <div class="invalid-feedback" *ngIf="bookingForm.get('checkIn')?.invalid && bookingForm.get('checkIn')?.touched">
+                Check in date is required.
+            </div>
+          </div>
+          <div class="mb-3">
+            <label>Check-out Date</label>
+            <input formControlName="checkOut" type="date" class="form-control" [class.is-invalid]="bookingForm.get('checkOut')?.invalid && bookingForm.get('checkOut')?.touched" />
+             <div class="invalid-feedback" *ngIf="bookingForm.get('checkOut')?.invalid && bookingForm.get('checkOut')?.touched">
+                Check out date is required.
+            </div>
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button class="btn btn-secondary" type="button" data-bs-dismiss="modal">Cancel</button>
+          <button class="btn btn-primary" type="submit">Confirm Booking</button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,15 @@
+<div class="card shadow-sm mb-4">
+  <div class="card-body">
+    <h5 class="card-title">Room {{ room.name }}</h5>
+    <p class="card-text">Type: {{ room.type }}</p>
+    <p class="card-text">Price: RM{{ room.price }}</p>
+    <p class="card-text">
+      <span class="badge" [ngClass]="room.availability === 'Available' ? 'bg-success' : 'bg-danger'">
+        {{ room.availability }}
+      </span>
+    </p>
+    <button class="btn btn-primary w-100" [disabled]="room.availability === 'Booked'" (click)="onBookClick()">
+      Book Now
+    </button>
+  </div>
+</div>
